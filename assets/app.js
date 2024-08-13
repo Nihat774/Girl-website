@@ -113,29 +113,27 @@ carousel2.map(({image})=>{
     <div class='page5-imgDiv'><img class='page5-img' src='${image}'></div>
     `
 })
-
+const upIcon = document.querySelector(".upIcon")
 const listIcon = document.querySelector(".list-icon");
-const shop = document.querySelector(".shop");
-const grov = document.querySelector(".grov");
-const card = document.querySelector(".card");
-const navbar = document.querySelector(".nav");
-const intoShop = document.querySelector(".intoShop");
 const closeIcon = document.querySelector(".close-icon");
-const header = document.querySelector("header");
-
+const openNav = document.querySelector(".openNav")
+const closeNav = document.querySelector(".responsNav")
 function nav(){
-    navbar.classList.add("respons")
-    shop.classList.add("respons")
-    intoShop.classList.add("respons")
-    card.classList.add("respons")
-    grov.style.display = "none"
-    shop.classList.add("respons")
-    listIcon.style.display = "none"
-    closeIcon.style.display = "flex"
-    shop.style.display = "flex"
+    openNav.style.display = "flex";
+    openNav.style.flexDirection = "column";
+    openNav.style.gap = "10px";
+    closeNav.style.display = "none"
+    
+    openNav.style.justifyContent = "space-between";
 }
 listIcon.addEventListener("click",nav)
 
 function close(){
-    
+closeNav.style.display = "flex"
+openNav.style.display = "none"
 }
+closeIcon.addEventListener('click',close)
+function goToUp(){
+    window.scrollTo({top:0,behavior:"smooth"})
+}
+upIcon.addEventListener('click',goToUp)
